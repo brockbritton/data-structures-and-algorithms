@@ -130,7 +130,7 @@ const createList = (availableItems) => {
   let finalList = [];
   availableItems.forEach(item => {
     if (item.available) {
-      finalList.push(item.name)
+      finalList.push(item.name);
     }
   });
 
