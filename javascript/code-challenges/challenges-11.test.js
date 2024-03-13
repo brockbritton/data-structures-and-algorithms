@@ -117,7 +117,6 @@ const allHappy = (arr) => {
       return false;
     }
   }
-
   return true;
 };
 
