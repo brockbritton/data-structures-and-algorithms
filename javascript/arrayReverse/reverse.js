@@ -1,4 +1,3 @@
-const { reverse } = require("dns");
 
 function reverseArray(arr) {
   let reverse = [];
@@ -12,7 +11,7 @@ function reverseArray(arr) {
 //reverseArray([89, 2354, 3546, 23, 10, -923, 823, -12]);
 
 describe('Testing ReverseArray', () => {
-  test('It should sort the star wars characters by height from tallest to shortest', () => {
+  test('It should reverse the elements of an array.', () => {
     expect(reverseArray([89, 2354, 3546, 23, 10, -923, 823, -12])).toEqual([-12, 823, -923, 10, 23, 3546, 2354, 89]);
   });
 });
