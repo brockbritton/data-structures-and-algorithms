@@ -54,7 +54,6 @@ describe('Linked List', () => {
     list.insert(5);
     list.insert(10);
     list.insert(15);
-    console.log(list.toString());
     expect(list.toString()).toEqual('{ 15 } -> { 10 } -> { 5 } -> NULL');
   });
 

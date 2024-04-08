@@ -193,7 +193,6 @@ For example: evenOddNumericValues(['Gregor', 2, 4, 1]) returns ['even', 'even', 
 const evenOddNumericValues = (arr) => {
   // Solution code here...
   const nums = arr.filter((item) => typeof item === 'number' && typeof item !== 'string');
-  console.log(nums)
   return nums.map(num => {
     if (num % 2 === 0) {
       return 'even';
