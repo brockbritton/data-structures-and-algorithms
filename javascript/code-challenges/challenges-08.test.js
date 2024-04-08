@@ -37,8 +37,6 @@ Write a function named removeThree that takes an index and an array. The functio
 
 const removeThree = (idx, arr) => {
   // Solution code here...
-  console.log(arr);
-  console.log(arr.slice(idx, 3));
   return arr.splice(idx, 3);
 };
 

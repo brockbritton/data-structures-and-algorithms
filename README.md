@@ -7,6 +7,7 @@ See [setup instructions](https://codefellows.github.io/setup-guide/code-301/2-co
 Code 401
 Class 1: [Array Reversal](./javascript/arrayReverse/README.md)
 Class 2: [Array Insert Shift](./javascript/arrayInsertShift/README.md)
+Class 5: [Linked List Implementation](./javascript/linkedList/README.md)
 
 
 ## Repository Quick Tour and Usage

@@ -104,8 +104,6 @@ const grandTotal = (stores) => {
     // Add the total cookies sold at this hour to the array
     totalCookiesPerHour.push(cookiesSoldHour);
   }
-
-  console.log(totalCookiesPerHour);
   return totalCookiesPerHour;
 
 };
@@ -123,7 +121,6 @@ Write a function named salesData that uses forEach to iterate over the hourlySal
 const salesData = (hours, data) => {
   // Solution code here...
   const formattedData = [];
-  console.log(data);
   // Iterate through each hour
   for (let hourIndex = 0; hourIndex < hours.length; hourIndex++) {
     let cookiesSoldAtHour = 0;
@@ -142,7 +139,6 @@ const salesData = (hours, data) => {
     // Add the object to the formatted data array
     formattedData.push(salesObject);
   }
-  console.log(formattedData)
   return formattedData;
 };
 

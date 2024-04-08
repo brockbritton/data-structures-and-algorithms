@@ -79,7 +79,6 @@ const newState = (arr, obj) => {
   newObj.stuff.cars = [...obj.cars, "Ford"]
   newObj.stuff.toothbrush = "brand new"
   newObj.stuff.toys += 1
-  console.log(newObj, obj);
   return newObj;
 };
 
