@@ -1,0 +1,12 @@
+{
+  "name": "linkedlistKthEnd",
+  "version": "1.0.0",
+  "description": "Instantiate a linked list class and test various conditions.",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest --verbose --coverage"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
