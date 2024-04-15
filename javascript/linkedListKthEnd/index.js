@@ -1,3 +1,5 @@
+'use strict';
+
 class Node {
   constructor(value) {
     this.value = value;
@@ -10,47 +12,93 @@ class LinkedList {
     this.head = null;
   }
 
-  add(value) {
-    const newNode = new Node(value);
+  size() {
+    let size = 0;
+    let currentNode = this.head;
+    while (currentNode) {
+      size += 1;
+      currentNode = currentNode.next;
+    }
+    return size;
+  }
 
+  traverse() {
+    let currentNode = this.head;
+    while (currentNode) {
+      currentNode = currentNode.next;
+    }
+  }
+
+  insert(value) {
+    let node = new Node(value);
+    if (this.head) {
+      node.next = this.head;
+    }
+    this.head = node;
+  }
+
+  append(value) {
+    let newNode = new Node(value);
     if (!this.head) {
       this.head = newNode;
     } else {
-      let current = this.head;
-      while (current.next) {
-        current = current.next;
+      let currentNode = this.head;
+      while (currentNode.next) {
+        currentNode = currentNode.next;
       }
-      current.next = newNode;
+      currentNode.next = newNode;
     }
+
   }
 
-  findKthFromEnd(k) {
-    let slow = this.head;
-    let fast = this.head;
-
-    for (let i = 0; i < k; i++) {
-      if (fast === null) {
-        return null;
+  includes(value) {
+    let currentNode = this.head;
+    while (currentNode) {
+      if (currentNode.value === value) {
+        return true;
       }
-      fast = fast.next;
+      currentNode = currentNode.next;
+    }
+    return false;
+  }
+
+  toString() {
+    let fullString = '';
+    let currentNode = this.head;
+    while (currentNode) {
+      fullString += `{ ${currentNode.value} } -> `;
+      currentNode = currentNode.next;
+    }
+    fullString += 'NULL';
+    return fullString;
+  }
+
+  kthFromEnd(k) {
+    if (k < 0) {
+      return 'Exception';
     }
 
-    while (fast !== null) {
-      slow = slow.next;
-      fast = fast.next;
+    let length = this.size();
+    if (k > length || length === 0) {
+      return 'Exception';
     }
 
-    return slow.value;
+    let forwardIndex = length - k - 1;
+    let currentNode = this.head;
+
+    for (let i = 0; i < forwardIndex; i++) {
+      currentNode = currentNode.next;
+    }
+
+    return currentNode.value;
   }
 }
 
-const linkedList = new LinkedList();
-linkedList.add(1);
-linkedList.add(2);
-linkedList.add(3);
-linkedList.add(4);
-linkedList.add(5);
+let list = new LinkedList();
+list.append(1);
+list.append(2);
+list.append(3);
+console.log(list.kthFromEnd(-3)); //null
 
-const k = 2;
-const kthFromEnd = linkedList.findKthFromEnd(k);
-console.log(`The ${k}th element from the end is: ${kthFromEnd}`);
+
+module.exports = LinkedList;
