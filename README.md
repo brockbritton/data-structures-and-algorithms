@@ -8,7 +8,8 @@ Code 401
 Class 1: [Array Reversal](./javascript/arrayReverse/README.md)
 Class 2: [Array Insert Shift](./javascript/arrayInsertShift/README.md)
 Class 5: [Linked List Implementation](./javascript/linkedList/README.md)
-
+Class 6: [Linked List Insertion](./javascript/linkedListInsertion/README.md)
+Class 8: [Linked List Zip](./javascript/linkedListZip/README.md)
 
 ## Repository Quick Tour and Usage
 
