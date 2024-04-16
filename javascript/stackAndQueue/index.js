@@ -26,11 +26,17 @@ class Stack {
       let value = this.top.value;
       this.top = this.top.next;
       return value;
+    } else {
+      throw Error('Stack is empty')
     }
   }
 
   peek() {
-    return this.top.value;
+    if (this.top === null) {
+      throw Error('Stack is empty');
+    } else {
+      return this.top.value;
+    }
   }
 
   isEmpty() {
@@ -105,3 +111,5 @@ value = queue.dequeue();
 value = queue.dequeue();
 
 console.log(value, queue);
+
+module.exports = { Stack, Queue };
