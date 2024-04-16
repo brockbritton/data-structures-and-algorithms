@@ -1,4 +1,4 @@
-const { Stack, Queue } = require('./stackAndQueue/index.js');
+const { Stack, Queue } = require('../index.js');
 
 describe('Stack', () => {
   let stack;

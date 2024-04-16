@@ -1,0 +1,15 @@
+{
+  "name": "stackandqueue",
+  "version": "1.0.0",
+  "description": "Instantiate a stack and a queue and test various conditions.",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest --verbose --coverage"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "jest": "^29.7.0"
+  }
+}
