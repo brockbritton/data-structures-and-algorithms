@@ -1,7 +1,7 @@
 
 # Challenge Title
 
-Instantiate a linked list class and test various conditions.
+Instantiate a stack and a queue and test various conditions.
 
 ## Whiteboard Process
 
