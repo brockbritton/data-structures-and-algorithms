@@ -27,7 +27,7 @@ class Stack {
       this.top = this.top.next;
       return value;
     } else {
-      throw Error('Stack is empty')
+      throw Error('Stack is empty');
     }
   }
 
