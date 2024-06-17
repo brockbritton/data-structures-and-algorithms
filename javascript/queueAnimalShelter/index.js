@@ -73,46 +73,54 @@ class AnimalShelterQueue {
     } else if (pref === 'cat') {
       return this.dequeueCat();
     } else {
-      return this.dequeueOldest();
+      //return this.dequeueOldest();
+      return null;
     }
   }
 
   dequeueDog() {
     let dog = this.dogs.dequeue();
-    let current = this.all.back;
-    let previous = null;
-    while(current.value.name !== dog.name) {
-      previous = current;
-      current = current.next;
-    }
-    if (previous) {
-      previous.next = current.next;
-    } else {
-      this.all.back = current.next;
-    }
+    // let current = this.all.back;
+    // let previous = null;
+    // while(current.value.name !== dog.name) {
+    //   previous = current;
+    //   current = current.next;
+    // }
+    // if (previous) {
+    //   previous.next = current.next;
+    // } else {
+    //   this.all.back = current.next;
+    // }
 
     return dog;
   }
 
   dequeueCat() {
     let cat = this.cats.dequeue();
-    let current = this.all.back;
-    let previous = null;
-    while(current.value.name !== cat.name) {
-      previous = current;
-      current = current.next;
-    }
-    if (previous) {
-      previous.next = current.next;
-    } else {
-      this.all.back = current.next;
-    }
+    // let current = this.all.back;
+    // let previous = null;
+    // while(current.value.name !== cat.name) {
+    //   previous = current;
+    //   current = current.next;
+    // }
+    // if (previous) {
+    //   previous.next = current.next;
+    // } else {
+    //   this.all.back = current.next;
+    // }
 
     return cat;
   }
 
   dequeueOldest() {
+    let animal = this.all.dequeue();
+    if (animal.species === 'dog') {
+      this.dogs.dequeue();
+    } else if (animal.species === 'cat') {
+      this.cats.dequeue();
+    }
 
+    return animal;
   }
 }
 
@@ -124,6 +132,6 @@ animalShelter.enqeue({ species: 'cat', name: 'cat1' });
 animalShelter.enqeue({ species: 'dog', name: 'dog3' });
 animalShelter.enqeue({ species: 'cat', name: 'cat2' });
 
-console.log(animalShelter.all);
-animalShelter.dequeue('cat');
-console.log(animalShelter.all);
+console.log(animalShelter.dogs);
+animalShelter.dequeue('dog');
+console.log(animalShelter.dogs);
