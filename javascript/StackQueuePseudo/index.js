@@ -55,7 +55,6 @@ class PseudoQueue {
   }
 }
 
-
 const pq = new PseudoQueue();
 pq.enqueue(1);
 pq.enqueue(2);
