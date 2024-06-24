@@ -90,19 +90,37 @@ class BinarySearchTree extends BinaryTree {
   }
 }
 
-const bst = new BinarySearchTree();
+describe('BinarySearchTree', () => {
+  let bst;
 
-bst.add(10);
-bst.add(5);
-bst.add(15);
-bst.add(3);
-bst.add(7);
-bst.add(12);
-bst.add(18);
+  beforeEach(() => {
+    bst = new BinarySearchTree();
+    bst.add(10);
+    bst.add(5);
+    bst.add(15);
+    bst.add(3);
+    bst.add(7);
+    bst.add(12);
+    bst.add(18);
+  });
 
-console.log(bst.contains(7));
-console.log(bst.contains(20));
+  test('should contain value 7', () => {
+    expect(bst.contains(7)).toBe(true);
+  });
 
-console.log(bst.preOrder());
-console.log(bst.inOrder());
-console.log(bst.postOrder());
+  test('should not contain value 20', () => {
+    expect(bst.contains(20)).toBe(false);
+  });
+
+  test('should return correct pre-order traversal', () => {
+    expect(bst.preOrder()).toEqual([10, 5, 3, 7, 15, 12, 18]);
+  });
+
+  test('should return correct in-order traversal', () => {
+    expect(bst.inOrder()).toEqual([3, 5, 7, 10, 12, 15, 18]);
+  });
+
+  test('should return correct post-order traversal', () => {
+    expect(bst.postOrder()).toEqual([3, 7, 5, 12, 18, 15, 10]);
+  });
+});
